@@ -1,0 +1,176 @@
+@cAccent: #1944ff;
+@cBackground: #fafafa;
+@cGray1: #484848;
+@cGray2: #999;
+@cGray3: #f2f2f2;
+@cProbe: #555;
+
+:root {
+  font-family: 'Roboto', Arial, sans-serif;
+	font-weight: 400;
+  color: @cGray1;
+}
+
+.wrapper {
+  position: relative;
+  width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  color: @cAccent;
+  font-weight: 300;
+  font-size: 48px;
+  margin: 40px 0 60px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div > a, aside > a {
+  color: inherit;
+}
+
+.contacts > div {
+  position: relative;
+  width: 660px;
+  height: 120px;
+  background: @cGray3;
+  margin: 48px 0;
+}
+
+.userpic {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background: @cProbe;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.userdata {
+  position: absolute;
+  left: 150px;
+  top: 20px;
+  font-size: 24px;
+  div {
+    font-size: 16px;
+    color: @cGray2;
+  }
+}
+.phone-mail {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 220px;
+  height: 70px;
+  padding: 0 10px;
+  text-align: right;
+  color: @cGray2;
+  div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90%;
+    padding: 8px 10px;
+    height: 32px;
+    background: @cAccent;
+    font-size: 26px;
+    font-weight: 300;
+    color: @cGray3;
+  }
+}
+
+.delete {
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  color: @cGray2;
+  font-size: 14px;
+}
+
+aside {
+  width: 240px;
+  position: fixed;
+  right: ~'calc(100% / 2 - 500px)';
+  top: 168px;
+  color: @cGray2;
+  input, select {
+    position: relative;
+    appearance: none !important;
+    box-sizing: border-box;
+    border: none;
+    background: @cGray3;
+    height: 36px;
+    width: 94%;
+    padding: 0 6%;
+    font-size: 16px;
+  }
+  .btn {
+    width: 94%;
+  }
+  a {
+    display: block;
+    font-size: 14px;
+    text-align: right;
+    width: 94%;
+  }
+  option {
+    height: 32px;
+    padding: 10px 0 2px 4px;
+  }
+  button {
+    background: @cAccent;
+    color: @cBackground;
+    height: 48px;
+    margin: 36px 0;
+  }
+}
+
+.aside-cap {
+  margin-top: 10px;
+  color: @cGray2;
+  font-size: 24px;
+}
+
+.add-new {
+  position: relative;
+  width: 660px;
+  div {font-size: 18px;}
+  input {
+    width: 96%;
+    height: 36px;
+    appearance: none !important;
+    border: none;
+    background: @cGray3;
+    padding: 4px 2%;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+.btn {
+  display: block;
+  height: 48px !important;
+  padding: 12px 0;
+  text-align: center;
+  background: @cAccent !important;
+  color: @cBackground;
+  margin: 20px 0;
+  font-size: 16px;
+  appearance: none !important;
+  box-sizing: border-box;
+  &:hover {
+    text-decoration: none;
+  }
+}
