@@ -1,1 +1,1 @@
-# x-mmd-addrbook 
+# x-mmd-acquiring
