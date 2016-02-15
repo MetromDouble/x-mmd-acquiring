@@ -177,7 +177,26 @@ a {
       border: 1px solid #e4e9ee;
       text-align: center;
       box-sizing: border-box;
-      padding: 0 12px;
+      padding: 0 10px;
+      background: #fcfcfc;
+      &:hover, &:focus {
+        background: #fff;
+      }
+    }
+    & select {
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      -ms-appearance: none !important;
+      appearance: none !important;
+      padding-right: 30px;
+      text-align: left;
+      background: url("../img/arrow.png") no-repeat, #fcfcfc;
+      background-position: 90% 50%;
+      transition: background-position 0.1s;
+      &:hover, &:focus {
+        background: url("../img/arrow.png") no-repeat, #fff;
+        background-position: 90% 55%;
+      }
     }
     &_cardnumber input {
       width: 64px;
