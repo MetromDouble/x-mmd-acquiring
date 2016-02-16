@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="dist/css/common.min.css">
   <script src="bower_components/jquery/dist/jquery.min.js" type=text/javascript></script>
-  <script src="dist/js/common.min.js" type=text/javascript></script>
+<!--  <script src="dist/js/common.min.js" type=text/javascript></script>-->
+  <script src="js/main.js" type=text/javascript></script>
 </head>
 <body>bower_components\jquery-validation\dist
   <div class="wrapper">
@@ -66,6 +67,7 @@
                 <input type="text" name="cnumber_b" id="cnumber_b">
                 <input type="text" name="cnumber_c" id="cnumber_c">
                 <input type="text" name="cnumber_d" id="cnumber_d">
+                <div class="card__warning">Вводите только цифры</div>
               </div>
               <span class="card__text">Срок действия</span>
               <div class="card__fields">
@@ -93,6 +95,7 @@
                 </select>
                 <div class="card__fields card__fields_holder">
                   <input type="text" id="card-holder">
+                  <div class="card__warning">Вводите только латинские символы</div>
                 </div>
               </div>
             </div>
@@ -100,6 +103,7 @@
               <span class="card__text">Код CVV2 / CVC2 &nbsp;</span>
               <div class="card__fields card__fields_back">
                 <input type="text" id="card-cvv">
+                <div class="card__warning card__warning_cvv">Вводите только цифры</div>
               </div>
             </div>
           </div>

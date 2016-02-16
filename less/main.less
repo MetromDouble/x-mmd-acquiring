@@ -318,6 +318,16 @@ a {
     color: #8494ab;
     font-size: 16px;
   }
+  &__warning {
+    display: none;
+    position: absolute;
+    color: red;
+    font-size: 10px;
+    margin-top: -13px;
+    &_cvv {
+      right: 22px;
+    }
+  }
   &__fields {
     & input, select {
       height: 40px;
@@ -352,6 +362,9 @@ a {
     &_holder input {
       text-align: left;
       width: 300px;
+    }
+    &_warning > .card__warning {
+      display: block;
     }
     &_back input{
       width: 134px;
