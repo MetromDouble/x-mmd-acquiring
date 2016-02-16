@@ -2,17 +2,20 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Demo psd-to-html project for Oleg Chulakov">
+	<meta name="author" content="MetromDouble">
   <title>x-mmd-acquiring</title>
   <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="dist/css/common.min.css">
   <script src="bower_components/jquery/dist/jquery.min.js" type=text/javascript></script>
   <script src="dist/js/common.min.js" type=text/javascript></script>
 </head>
-<body>
+<body>bower_components\jquery-validation\dist
   <div class="wrapper">
 
     <!-- sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="logo">
         <div class="logo__image">
           <img src="dist/img/logo.png" alt="">
@@ -29,6 +32,9 @@
       </nav>
     </aside>
     <!-- /sidebar -->
+
+    <!-- Toggle main menu in mobile view -->
+    <div class="menu-toggler" id="menu-toggler"></div>
 
     <!-- content -->
     <div class="main-content">
@@ -48,18 +54,18 @@
         </div>
 
         <!-- cardform -->
-        <form action="#" class="cardform">
+        <form action="#" class="cardform" id="cardform">
           <div class="cardform__title">Данные банковской карты</div>
 
           <!-- card -->
           <div class="card">
             <div class="card__front">
               <span class="card__text">Номер карты</span>
-              <div class="card__fields card__fields_cardnumber">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
+              <div class="card__fields card__fields_cardnumber" id="card-number">
+                <input type="text" name="cnumber_a" id="cnumber_a">
+                <input type="text" name="cnumber_b" id="cnumber_b">
+                <input type="text" name="cnumber_c" id="cnumber_c">
+                <input type="text" name="cnumber_d" id="cnumber_d">
               </div>
               <span class="card__text">Срок действия</span>
               <div class="card__fields">
@@ -86,20 +92,20 @@
                   <option value="2021">2021</option>
                 </select>
                 <div class="card__fields card__fields_holder">
-                  <input type="text">
+                  <input type="text" id="card-holder">
                 </div>
               </div>
             </div>
             <div class="card__back">
               <span class="card__text">Код CVV2 / CVC2 &nbsp;</span>
               <div class="card__fields card__fields_back">
-                <input type="text">
+                <input type="text" id="card-cvv">
               </div>
             </div>
           </div>
           <!-- /card -->
 
-          <button type="button" name="cardform__paybutton" class="cardform__paybutton">Оплатить</button>
+          <button type="button" name="cardform-paybutton" class="cardform__paybutton" id="cardform-paybutton">Оплатить</button>
         </form>
         <!-- /cardform -->
 

@@ -2,7 +2,7 @@
     font-family: 'opensans_bold';
     src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
 }
-
+// base_setup
 :root {
   height: 100%;
   width: 100%;
@@ -18,27 +18,58 @@ body {
 a {
   text-decoration: none;
 }
+// /base_setup
 
 .wrapper {
   position: relative;
   width: 960px;
   margin: 86px auto 0 auto;
 }
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    width: 100%;
+    margin: 0;
+  }
+}
 
+// sidebar
 .sidebar {
   position: absolute;
   left: 0;
   top:0;
   width: 320px;
   background: #1f2229;
+  z-index: 999;
+  transition: left 0.2s;
+}
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    width: 220px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -220px;
+    width: 220px;
+    height: 100%;
+    &_open {
+      left: 0;
+    }
+  }
 }
 
 .logo {
   height: 164px;
   &__image {
-    display: inline-block;
-    margin: 64px 0 0 30px;
+    box-sizing: border-box;
+    padding: 64px 0 0 30px;
   }
+}
+@media screen and (max-width: 1000px) {
+  .logo__image {
+      padding-left: 24px;
+    }
 }
 
 .nav {
@@ -71,13 +102,91 @@ a {
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .nav {
+    &__item {
+      font-size: 14px;
+      padding-left: 14px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    &__item {
+      line-height: 40px;
+      height: 40px;
+    }
+  }
+}
 
+.menu-toggler {
+  display: none;
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  width: 28px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  border-radius: 3px;
+  background: rgba(31,34,41,.7);
+  z-index: 990;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    margin: -7px 0 0 -7px;
+    left: 50%;
+    top: 50%;
+    background: linear-gradient(to bottom,
+      #eee 3px,
+      transparent 3px,
+      transparent 5px,
+      #eee 5px,
+      #eee 9px,
+      transparent 9px,
+      transparent 11px,
+      #eee 11px
+      );
+  }
+  &_open {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu-toggler {
+    display: block;
+  }
+}
+// /sidebar
+
+// main-content
 .main-content {
   position: absolute;
   right: 0;
   top:0;
   width: 640px;
   background: #f7f8f8;
+}
+@media screen and (max-width: 1000px) {
+  .main-content {
+    width: ~"calc(100% - 220px)";
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-content {
+    width: 100%;
+  }
 }
 
 .header {
@@ -94,10 +203,36 @@ a {
     font-size: 14px;
   }
 }
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 30px 20px 0 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 30px 10px 28px 10px;
+    height: auto;
+    text-align: center;
+    &__title {
+      line-height: 1;
+      margin-bottom: 2%;
+    }
+  }
+}
 
 .pay {
   color: #373c43;
   padding: 42px 28px 0 28px;
+}
+@media screen and (max-width: 768px) {
+  .pay {
+    padding-left: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pay {
+    padding: 10px;
+  }
 }
 
 .pay-screen {
@@ -113,7 +248,15 @@ a {
     display: inline-block;
   }
 }
-
+@media screen and (max-width: 480px) {
+  .pay-screen {
+    &__summ, &__number {
+      margin-bottom: 8px;
+      width: 136px;
+    }
+  }
+}
+// form
 .cardform {
   padding-bottom: 40px;
   &__title {
@@ -135,6 +278,11 @@ a {
       background: linear-gradient(0deg, rgba(0,0,0,.1) 0%, rgba(255,255,255,.3) 100%),
                   #95bf00;
     }
+  }
+}
+@media screen and (max-width: 360px) {
+  .cardform__title {
+    text-align: center;
   }
 }
 
@@ -159,10 +307,10 @@ a {
     z-index: 2;
   }
   &__back {
-    right: 0;
+    left: 160px;
     top: 20px;
     padding-top: 80px;
-    background: linear-gradient(to bottom, #f7f8f8 23px, #e4e9ee 23px, #e4e9ee 72px, #f7f8f8 72px,);
+    background: linear-gradient(to bottom, #f7f8f8 23px, #e4e9ee 23px, #e4e9ee 72px, #f7f8f8 72px);
     z-index: 1;
     text-align: right;
   }
@@ -222,6 +370,38 @@ a {
     }
   }
 }
+@media screen and (max-width: 580px) {
+  .card {
+    height: 380px;
+    &__back {
+      width: 200px;
+      height: 120px;
+      left: 0;
+      top: 240px;
+      padding-top: 40px;
+      background: linear-gradient(to bottom, #f7f8f8 12px, #e4e9ee 12px, #e4e9ee 36px, #f7f8f8 36px);
+      z-index: 1;
+      text-align: right;
+    }
+  }
+}
+@media screen and (max-width: 360px) {
+  .card {
+    height: 380px;
+    &__fields {
+      &_cardnumber input {
+        width: 21.5%;
+      }
+      &_holder input {
+        width: 100%;
+      }
+    }
+    &__front {
+      width: 100%;
+    }
+  }
+}
+// /form
 
 .footer {
   background: #373c43;
@@ -231,3 +411,4 @@ a {
     font-size: 12px;
   }
 }
+// /main-content
