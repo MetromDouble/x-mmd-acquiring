@@ -369,17 +369,26 @@ a {
     &_back input{
       width: 134px;
       padding-right: 40px;
+      margin-right: 8px;
     }
-    &_back::after {
-      position: relative;
-      display: block;
-      float: right;
-      margin: 12px 16px 0 -100px;
-      z-index: 3;
-      content: "";
-      background: url("../img/helper.png");
-      width: 26px;
-      height: 26px;
+  }
+  &__hint {
+    position: relative;
+    display: block;
+    float: right;
+    margin: 6px 0 0 -70px;
+    padding-left: 46px;
+    font-size: 0;
+    text-align: left;
+    z-index: 3;
+    content: "";
+    background: url("../img/helper.png") bottom left no-repeat;
+    width: 0px;
+    height: 32px;
+    &:hover {
+      width: 70px;
+      margin-right: -70px;
+      font-size: 9px;
     }
   }
 }
